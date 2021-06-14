@@ -1,0 +1,24 @@
+#+TITLE:     Redis Fairness Demo
+#+AUTHOR:    Jeff Romine
+#+EMAIL:     jeff.romine@gearlaunch.com
+#+DATE:      2021-06-14 Mon
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS: ^:{} author:nil email:nil creator:nil timestamp:nil
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:
+#+LINK_HOME:
+#+XSLT:
+#+STARTUP: showeverything
+
+
+#+BEGIN_SRC shell-script
+docker run -d -p 6379:6379 -it --rm redislabs/redistimeseries
+java -jar target/redisolar-1.0.jar load
+java -jar target/redisolar-1.0.jar server config.yml
+#+END_SRC
