@@ -22,3 +22,6 @@ docker run -d -p 6379:6379 -it --rm redislabs/redistimeseries
 java -jar target/redisolar-1.0.jar load
 java -jar target/redisolar-1.0.jar server config.yml
 #+END_SRC
+
+
+[[https://stackoverflow.com/questions/41157949/how-do-i-get-the-json-body-in-jersey]]

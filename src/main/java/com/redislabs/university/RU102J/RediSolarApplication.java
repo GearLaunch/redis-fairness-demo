@@ -72,6 +72,11 @@ public class RediSolarApplication extends Application<RediSolarConfiguration> {
                         new FeedDaoRedisImpl(jedisPool));
         environment.jersey().register(meterResource);
 
+        FairnessResource fairnessResource =
+            new FairnessResource(new FairnessRedisImpl(jedisPool));
+        environment.jersey().register(fairnessResource);
+
+
         RediSolarHealthCheck healthCheck = new RediSolarHealthCheck(redisConfig);
         environment.healthChecks().register("healthy", healthCheck);
     }
